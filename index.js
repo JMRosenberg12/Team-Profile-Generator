@@ -1,8 +1,8 @@
 const Inquirer = require("inquirer");
-const Employee = require('./lib/test/Employee.test.js');
-const Intern = require('./lib/test/Intern.test.js');
-const Manager = require('./lib/test/Manager.test.js');
-const Engineer = require('./lib/test/Engineer.test.js');
+// const Employee = require('./lib/test/Employee.test.js');
+// const Intern = require('./lib/test/Intern.test.js');
+// const Manager = require('./lib/test/Manager.test.js');
+// const Engineer = require('./lib/test/Engineer.test.js');
 
 function getManager() {
     return Inquirer.prompt([
