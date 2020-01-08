@@ -55,15 +55,15 @@ function getIntern() {
             type: "input",
             name: "name",
         }, {
-            message: "What is your favorite color",
+            message: "What is your ID",
             type: "input",
-            name: "color",
+            name: "ID",
         }, {
             message: "What is your email?",
             type: "input",
             name: "email",
         }, {
-            message: "What college did you go to?",
+            message: "What school did you go to?",
             type: "input",
             name: "school",
         }
