@@ -55,9 +55,9 @@ function getIntern() {
             type: "input",
             name: "name",
         }, {
-            message: "What is your ID",
+            message: "What is your id",
             type: "input",
-            name: "ID",
+            name: "id",
         }, {
             message: "What is your email?",
             type: "input",
