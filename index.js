@@ -1,5 +1,5 @@
 const Inquirer = require("inquirer");
-// const Employee = require('./lib/test/Employee.test.js');
+// const Employee = require('./lib/Employee.test.js');
 // const Intern = require('./lib/test/Intern.test.js');
 // const Manager = require('./lib/test/Manager.test.js');
 // const Engineer = require('./lib/test/Engineer.test.js');
@@ -11,9 +11,9 @@ function getManager() {
             type: "input",
             name: "name",
         }, {
-            message: "What is your favorite color?",
+            message: "What is your Id",
             type: "input",
-            name: "color",
+            name: "id",
         }, {
             message: "What is your email?",
             type: "input",
@@ -37,9 +37,9 @@ function getEngineer() {
             type: "input",
             name: "email",
         }, {
-            message: "What is your favorite color?",
+            message: "What is your github?",
             type: "input",
-            name: "color",
+            name: "github",
         }, {
             message: "What is your github profile?",
             type: "input",
@@ -77,14 +77,14 @@ function getEmployee() {
             type: "input",
             name: "name",
         }, {
-            message: "What is your favorite color?",
+            message: "What is your ID",
             type: "input",
-            name: "color",
+            name: "ID",
         }, {
-            message: "What is your favorite job?",
+            message: "What is your email?",
             type: "input",
-            name:"job"
-        }
+            name:"email"
+        },
     ])
 }
 
