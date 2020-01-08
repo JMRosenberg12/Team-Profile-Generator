@@ -117,7 +117,7 @@ function nextEmployee() {
             typeOfEmployee().then(function (value) {
                 if(value.typeOfEmployee === 'Engineer') {
                     getEngineer().then(function (value) {
-                        let Engineer = new Engineer(value.name, value.id, value.email, value.github);
+                        let Engineer = new Engineer(value.name, value.email, value.github, value.githubProfile);
                         // let newCard = document.createElement('div');
                         // let add = document.getElementById('add');
                         // add.appendChild(newCard);
