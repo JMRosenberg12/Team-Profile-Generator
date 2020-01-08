@@ -117,7 +117,7 @@ function nextEmployee() {
             typeOfEmployee().then(function (value) {
                 if(value.typeOfEmployee === 'Engineer') {
                     getEngineer().then(function (value) {
-                        let engineer = new Engineer(value.name, value.id, value.email, value.github);
+                        let Engineer = new Engineer(value.name, value.id, value.email, value.github);
                         // let newCard = document.createElement('div');
                         // let add = document.getElementById('add');
                         // add.appendChild(newCard);
@@ -125,7 +125,7 @@ function nextEmployee() {
                     })
                 } else {
                     getIntern().then(function (value) {
-                        let intern = new Intern(value.name, value.id, value.email, value.school);
+                        let Intern = new Intern(value.name, value.id, value.email, value.school);
                         // console.log(intern);
                         nextEmployee();
                     })
