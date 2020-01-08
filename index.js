@@ -136,8 +136,10 @@ function nextEmployee() {
     })
 }
 
+const Manager = require("./lib/Manager.js")
 getManager().then(function (value) {
     let e = new Manager(value.name, value.id, value.email, value.officeNumber);
     // console.log(e);
     nextEmployee();
 })
+
