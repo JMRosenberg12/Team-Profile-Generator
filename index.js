@@ -124,9 +124,6 @@ function nextEmployee() {
                     getEngineer().then(function (value) {
                         let e = new Engineer(value.name, value.id, value.email, value.github);
                         employees.push(e)
-                        // let newCard = document.createElement('div');
-                        // let add = document.getElementById('add');
-                        // add.appendChild(newCard);
                         nextEmployee();
                     })
                 } else {
@@ -154,12 +151,8 @@ getManager().then(function (value) {
     nextEmployee();
 })
 
-function generateHTML(){
-    return `<!DOCTYPE html>
-    <html lang='en'>
-    <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content="width=device-width, initial-scale=1">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <style>`
+function generateHTML(jobTitle){
+    // let newCard = document.createElement('div');
+    // let add = document.getElementById('add');
+    // add.appendChild(newCard);
 }
