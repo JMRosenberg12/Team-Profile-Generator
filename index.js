@@ -1,4 +1,9 @@
 const Inquirer = require("inquirer");
+const Manager = require("./lib/Manager.js")
+const Engineer = require("./lib/Engineer.js")
+const Intern = require("./lib/Intern.js")
+const employees = []
+// store list employees
 // const Employee = require('./lib/Employee.test.js');
 // const Intern = require('./lib/test/Intern.test.js');
 // const Manager = require('./lib/test/Manager.test.js');
@@ -33,13 +38,13 @@ function getEngineer() {
             type: "input",
             name: "name",
         }, {
+            message: "What is your id?",
+            type: "input",
+            name: "id",
+        }, {
             message: "What is your email?",
             type: "input",
             name: "email",
-        }, {
-            message: "What is your github?",
-            type: "input",
-            name: "github",
         }, {
             message: "What is your github profile?",
             type: "input",
@@ -117,7 +122,8 @@ function nextEmployee() {
             typeOfEmployee().then(function (value) {
                 if(value.typeOfEmployee === 'Engineer') {
                     getEngineer().then(function (value) {
-                        let Engineer = new Engineer(value.name, value.email, value.github, value.githubProfile);
+                        let e = new Engineer(value.name, value.id, value.email, value.github);
+                        employees.push(e)
                         // let newCard = document.createElement('div');
                         // let add = document.getElementById('add');
                         // add.appendChild(newCard);
@@ -125,21 +131,35 @@ function nextEmployee() {
                     })
                 } else {
                     getIntern().then(function (value) {
-                        let Intern = new Intern(value.name, value.id, value.email, value.school);
+                        let e = new Intern(value.name, value.id, value.email, value.school);
+                        employees.push(e)
                         // console.log(intern);
                         nextEmployee();
                     })
                 }
                 
             })
+        } else {
+            // this code is wrong when you don't need employee
+            console.log(employees)
         }
-    })
+    }) 
 }
 
-const Manager = require("./lib/Manager.js")
+
 getManager().then(function (value) {
     let e = new Manager(value.name, value.id, value.email, value.officeNumber);
+    employees.push(e)
     // console.log(e);
     nextEmployee();
 })
 
+function generateHTML(){
+    return `<!DOCTYPE html>
+    <html lang='en'>
+    <head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content="width=device-width, initial-scale=1">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style>`
+}
