@@ -3,6 +3,7 @@ const Manager = require("./lib/Manager.js")
 const Engineer = require("./lib/Engineer.js")
 const Intern = require("./lib/Intern.js")
 const employees = []
+const fs = require("fs")
 // store list employees
 // const Employee = require('./lib/Employee.test.js');
 // const Intern = require('./lib/test/Intern.test.js');
@@ -139,6 +140,13 @@ function nextEmployee() {
         } else {
             // this code is wrong when you don't need employee
             console.log(employees)
+            const html = generateHTML()
+            fs.writeFile("team.html", html, (err) => {
+            if (err) throw err;
+            console.log("Hey, we saved for team.html!")
+
+            })
+            
         }
     }) 
 }
@@ -152,7 +160,32 @@ getManager().then(function (value) {
 })
 
 function generateHTML(jobTitle){ 
-    let HTML = 
+    let cardsHTML = 'new card for Employee'
+    employees.forEach(employee=> {
+
+
+    
+        console.log(employee)
+     cardsHTML+=
+     
+     `
+    
+     <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">${employee.name}</h5>
+    <h6 class="card-subtitle mb-2 text-muted"></h6>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+     `
+    })
+
+
+
+
+    let HTML =  
     `  
     <!DOCTYPE html>
     <html lang="en">
@@ -173,14 +206,12 @@ function generateHTML(jobTitle){
             <h1 class="display-4">Team Members</h1>
         </div>
         <div id="add">
-    
+        ${cardsHTML}
         </div>
     
     </body>
     
     </html>`
     return HTML
-    // let newCard = document.createElement('div');
-    // let add = document.getElementById('add');
-    // add.appendChild(newCard);
+    
 }
